@@ -1,4 +1,4 @@
-function ODG = PQnNetB (MOV)
+function ODG = PQnNet (MOV)
 % Neural net to get the final ODG
 
 % P. Kabal $Revision: 1.1 $  $Date: 2003/12/07 13:27:44 $

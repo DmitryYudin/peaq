@@ -11,10 +11,12 @@ else
     iB = mod (iB + 1, 2);   % Only two files can be "active" at a time
 end
 
-[size WAV.Fs Nbit] = wavread (File, 'size');
+info = audioinfo (File);
+WAV.Fs = info.SampleRate;
+Nbit = info.BitsPerSample;
 WAV.Fname = File;
-WAV.Nframe = size(1);
-WAV.Nchan = size(2);
+WAV.Nframe = info.TotalSamples;
+WAV.Nchan = info.NumChannels;
 WAV.iB = iB;   % Buffer number
 
 % Initialize the buffer
